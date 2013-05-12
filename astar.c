@@ -254,11 +254,11 @@ static int add_to_open_list(astar_t* astar, cell_t* curr_cell, cell_t* next_cell
 */
 static int resolve_path(astar_t* astar, coord_t* path, int size)
 {
-#define ADD_TO_PATH_COORD(cell)                      \
-    if (unlikely(path_count + 1 > size))              \
-        return 0;                                      \
-    path[path_count].x = CELL_X(astar->map, (cell));  \
-    path[path_count].y = CELL_Y(astar->map, (cell));  \
+#define ADD_TO_PATH_COORD(cell)                         \
+    if (unlikely(path_count + 1 > size))                \
+        return 0;                                       \
+    path[path_count].x = CELL_X(astar->map, (cell));    \
+    path[path_count].y = CELL_Y(astar->map, (cell));    \
     ++path_count;
 
     int path_count = 0;
