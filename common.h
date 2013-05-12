@@ -26,7 +26,7 @@ typedef struct {
 #define COORD_X(coord)		((coord)->x)
 #define COORD_Y(coord)		((coord)->y)
 
-/* We may calculate the index use x and y. Or we may have flag in struct cell_t
+/* We may calculate the index use x and y. Or we may only have flag in struct cell_t
    when we should calculate index, x and y with map address and cell_t address.
    e.g CELL_INDEX(map, cell) : ((int)((cell) - map->terrain)) */
 #define CELL_INDEX(map, cell)	((cell)->index)
@@ -61,13 +61,13 @@ typedef struct {
 
 /**********************************************
                     Y > 0
-				 3    2    1
-				   *  *  *
-					* * *
+		 3    2    1
+		   *  *  *
+		    * * *
       X < 0<--   4 ******* 0    -->X > 0
-					* * *
-				   *  *  *
-				 5    6    7
+		    * * *
+		   *  *  *
+		 5    6    7
                     Y < 0
 **********************************************/
 #define DIRECTION_MAX 7
